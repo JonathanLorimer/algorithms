@@ -1,5 +1,4 @@
 pub fn find_max_crossing_subarray(v: &Vec<i32>, low: usize, mid: usize, high: usize) -> Option<(usize, usize, i32)>  {
-    println!("low: {:?}, mid: {:?}, high: {:?}", low, mid, high);
     let mut left_sum: Option<i32> = None;
     let mut right_sum: Option<i32> = None;
     let mut sum: i32 = 0;
@@ -33,9 +32,7 @@ pub fn find_max_crossing_subarray(v: &Vec<i32>, low: usize, mid: usize, high: us
         };
 
     }
-    println!("left_sum: {:?}, right_sum: {:?}, max_left: {:?}, max_right {:?}", left_sum, right_sum, max_left, max_right);
     let res = left_sum.and_then(|ls| right_sum.map(|rs| (max_left, max_right, ls + rs)));
-    println!("{:?}", res);
     res
 }
 
